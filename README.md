@@ -50,3 +50,24 @@ _example TNS_ADMIN location_
       set_primary_key "person_id"
 
     end
+
+## Apache Setup
+
+Create an apache instance
+
+    <VirtualHost *:80>
+      ServerName rails-oracle.dev
+      DocumentRoot /var/www/app-name/public/
+      RackEnv development
+      <Directory /var/www/app-name/public/>
+        AllowOverride all
+        Options -MultiViews
+      </Directory>
+    </VirtualHost>
+
+Add your oracle environment data to your apache config
+
+    SetEnv ORACLE_HOME "/opt/oracle/instantclient"
+    SetEnv ORACLE_BASE "/opt/oracle/instantclient"
+    SetEnv LD_LIBRARY_PATH "/opt/oracle/instantclient"
+    SetEnv TNS_ADMIN "/opt/oracle"
