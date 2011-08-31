@@ -13,10 +13,11 @@ end
 gem 'jquery-rails'
 
 # Database
+gem 'composite_primary_keys', '~> 4.0.0.beta9'
 gem 'ruby-oci8'
 gem 'activerecord-oracle_enhanced-adapter', '~> 1.4.0'
 gem 'squeel'
-gem 'meta_search'
+gem 'meta_search', '~> 1.1.0.pre'
 
 group :development, :test do
   gem 'ruby-debug',   :platforms => :ruby_18
